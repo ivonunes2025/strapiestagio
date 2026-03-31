@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "definicaos",
+  "info": {
+    "singularName": "definicao",
+    "pluralName": "definicaos",
+    "displayName": "⚙️Definição"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "menu_principal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::menu.menu"
+    },
+    "menu": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::menu.menu"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "menu_footer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::menu.menu"
+    },
+    "font_family": {
+      "type": "enumeration",
+      "default": "Inter",
+      "enum": [
+        "Inter",
+        "Open Sans",
+        "Poppins"
+      ]
+    }
+  }
+}

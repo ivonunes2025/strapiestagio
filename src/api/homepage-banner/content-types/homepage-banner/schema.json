@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage_banners",
+  "info": {
+    "singularName": "homepage-banner",
+    "pluralName": "homepage-banners",
+    "displayName": "🖼️ Banners Homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imagem_1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "audios",
+        "videos"
+      ]
+    },
+    "imagem_2": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imagem_3": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "titulo_1": {
+      "type": "string"
+    },
+    "titulo_2": {
+      "type": "string"
+    },
+    "titulo_3": {
+      "type": "string"
+    },
+    "subtitulo_1": {
+      "type": "string"
+    },
+    "subtitulo_2": {
+      "type": "string"
+    },
+    "subtitulo_3": {
+      "type": "string"
+    },
+    "bnt_texto_1": {
+      "type": "string"
+    },
+    "bnt_texto_2": {
+      "type": "string"
+    },
+    "bnt_texto_3": {
+      "type": "string"
+    },
+    "btn_link_1": {
+      "type": "string"
+    },
+    "btn_link_2": {
+      "type": "string"
+    },
+    "btn_link_3": {
+      "type": "string"
+    }
+  }
+}

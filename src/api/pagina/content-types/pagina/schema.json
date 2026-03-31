@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paginas",
+  "info": {
+    "singularName": "pagina",
+    "pluralName": "paginas",
+    "displayName": "📄 Páginas"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "conteudo": {
+      "type": "blocks"
+    },
+    "seo_titulo": {
+      "type": "string"
+    },
+    "seo_descricao": {
+      "type": "string"
+    },
+    "imagem": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "telemovel": {
+      "type": "string"
+    },
+    "morada": {
+      "type": "string"
+    },
+    "visivel": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

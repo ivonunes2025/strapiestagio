@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_subscritos",
+  "info": {
+    "singularName": "newsletter-subscrito",
+    "pluralName": "newsletter-subscritos",
+    "displayName": "✉️NewsletterSubscrito"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "subscrito": {
+      "type": "boolean",
+      "default": true
+    },
+    "data_subscricao": {
+      "type": "datetime"
+    }
+  }
+}
