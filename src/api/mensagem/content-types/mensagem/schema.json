@@ -3,8 +3,8 @@
   "collectionName": "mensagems",
   "info": {
     "singularName": "mensagem",
-    "pluralName": "mensagems",
-    "displayName": "Mensagem"
+    "pluralName": "mensagens",
+    "displayName": "💬 Mensagens"
   },
   "options": {
     "draftAndPublish": true

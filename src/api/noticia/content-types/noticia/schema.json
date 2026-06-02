@@ -60,6 +60,16 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "inversedBy": "noticias"
+    },
+    "titulo_ingles": {
+      "type": "string"
+    },
+    "conteudo_ingles": {
+      "type": "blocks"
+    },
+    "slug_ingles": {
+      "type": "uid",
+      "targetField": "titulo_ingles"
     }
   }
 }

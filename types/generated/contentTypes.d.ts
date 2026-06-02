@@ -614,8 +614,8 @@ export interface ApiHomepageBannerHomepageBanner
 export interface ApiMensagemMensagem extends Struct.CollectionTypeSchema {
   collectionName: 'mensagems';
   info: {
-    displayName: 'Mensagem';
-    pluralName: 'mensagems';
+    displayName: '\uD83D\uDCAC Mensagens';
+    pluralName: 'mensagens';
     singularName: 'mensagem';
   };
   options: {
@@ -755,6 +755,7 @@ export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
       'api::categoria.categoria'
     >;
     conteudo: Schema.Attribute.Blocks;
+    conteudo_ingles: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -768,8 +769,10 @@ export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
     Privadas: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'titulo'>;
+    slug_ingles: Schema.Attribute.UID<'titulo_ingles'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     titulo: Schema.Attribute.String;
+    titulo_ingles: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -814,6 +817,42 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     visivel: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ApiQrSessionQrSession extends Struct.CollectionTypeSchema {
+  collectionName: 'qr_sessions';
+  info: {
+    description: '';
+    displayName: 'QR Session';
+    pluralName: 'qr-sessions';
+    singularName: 'qr-session';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    estado: Schema.Attribute.Enumeration<['pending', 'authorized', 'expired']> &
+      Schema.Attribute.DefaultTo<'pending'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::qr-session.qr-session'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    tempJwt: Schema.Attribute.String;
+    token: Schema.Attribute.String & Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -1515,6 +1554,7 @@ declare module '@strapi/strapi' {
       'api::newsletter-subscrito.newsletter-subscrito': ApiNewsletterSubscritoNewsletterSubscrito;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina.pagina': ApiPaginaPagina;
+      'api::qr-session.qr-session': ApiQrSessionQrSession;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

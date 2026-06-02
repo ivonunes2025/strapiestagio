@@ -19,6 +19,7 @@
     "@strapi/plugin-cloud": "5.36.1",
     "@strapi/plugin-users-permissions": "5.36.1",
     "@strapi/strapi": "5.36.1",
+    "@types/uuid": "^10.0.0",
     "all": "^0.0.0",
     "better-sqlite3": "^12.6.2",
     "fs-extra": "^10.0.0",
@@ -27,7 +28,8 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-plugin-navigation": "^3.3.5",
-    "styled-components": "^6.0.0"
+    "styled-components": "^6.0.0",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

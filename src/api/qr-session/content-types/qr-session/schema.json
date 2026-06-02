@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qr_sessions",
+  "info": {
+    "singularName": "qr-session",
+    "pluralName": "qr-sessions",
+    "displayName": "QR Session",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "token": {
+      "type": "string",
+      "unique": true
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "authorized",
+        "expired"
+      ],
+      "default": "pending"
+    },
+    "tempJwt": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
