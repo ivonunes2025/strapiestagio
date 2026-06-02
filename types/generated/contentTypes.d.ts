@@ -820,42 +820,6 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiQrSessionQrSession extends Struct.CollectionTypeSchema {
-  collectionName: 'qr_sessions';
-  info: {
-    description: '';
-    displayName: 'QR Session';
-    pluralName: 'qr-sessions';
-    singularName: 'qr-session';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    estado: Schema.Attribute.Enumeration<['pending', 'authorized', 'expired']> &
-      Schema.Attribute.DefaultTo<'pending'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::qr-session.qr-session'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    tempJwt: Schema.Attribute.String;
-    token: Schema.Attribute.String & Schema.Attribute.Unique;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    user: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
-  };
-}
-
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
@@ -1554,7 +1518,6 @@ declare module '@strapi/strapi' {
       'api::newsletter-subscrito.newsletter-subscrito': ApiNewsletterSubscritoNewsletterSubscrito;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::pagina.pagina': ApiPaginaPagina;
-      'api::qr-session.qr-session': ApiQrSessionQrSession;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
