@@ -519,6 +519,7 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
     nome: Schema.Attribute.String;
     noticias: Schema.Attribute.Relation<'manyToMany', 'api::noticia.noticia'> &
       Schema.Attribute.Private;
+    ordem: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<999>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'nome'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -823,7 +824,7 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
-    displayName: 'Tag';
+    displayName: '\uD83C\uDFF7\uFE0FTag';
     pluralName: 'tags';
     singularName: 'tag';
   };

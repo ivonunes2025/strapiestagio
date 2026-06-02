@@ -18,6 +18,10 @@
       "type": "uid",
       "targetField": "nome"
     },
+    "ordem": {
+      "type": "integer",
+      "default": 999
+    },
     "noticias": {
       "type": "relation",
       "relation": "manyToMany",
